@@ -1,65 +1,51 @@
-# Project 1: Titanic EDA
+  # ![GA Logo](https://camo.githubusercontent.com/6ce15b81c1f06d716d753a61f5db22375fa684da/68747470733a2f2f67612d646173682e73332e616d617a6f6e6177732e636f6d2f70726f64756374696f6e2f6173736574732f6c6f676f2d39663838616536633963333837313639306533333238306663663535376633332e706e67) Exploring Titanic
 
-This week was all about Pandas and plotting. At this point you should be chomping at the bit to get your hands dirty on a real-world dataset.
+---
 
-For this project, we're going to take a look at the Titanic manifest. We'll be exploring this data to see what we can learn regarding the survival rates of different groups of people.
+_Author: Dodge McIntosh_
 
-## Prework
-Fork and clone this repo. At the end of this project, you'll submit a pull request using the `Titanic.ipynb` notebook to answer the questions below.
+---
+
+In class up until this project, we had been learning all about Pandas and plotting. At this point I was chomping at the bit to get my hands dirty on a real-world dataset.
+
+For this project, I took a depp look at the Titanic manifest. I explored this data to see what can be learned regarding the survival rates of different groups of people.
+
+## Brief Overview of the Workflow:
+> - Reading in the data
+  - Cleaning the data
+  - Basic feature extraction
+  - Exploratory analysis
+  - Visualizing findings
 
 ## Step 1: Reading the data
 
-1. Go to [https://www.kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data)
-2. If you scroll down the page a bit, you'll see a data dictionary explaining each of the columns. Take a minute to familiarize yourself with how the csv is structured.
-4. Download the `train.csv` file into this project
-3. Create an iPython notebook and load the csv into pandas.
+1. Data drawn from [https://www.kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data)
+2. An available data dictionary explains each of the columns. It's important to get familiarized with how the csv is structured.
+4. Downloaded the `train.csv` file into this project repo
+3. Created an iPython notebook and read the csv in using pandas.
 
 ## Step 2: Cleaning the data
-1. Create a bar chart showing how many missing values are in each column
-2. Which column has the most `NaN` values? How many cells in that column are empty?
-3. Delete all rows where `Embarked` is empty
-4. Fill all empty cabins with **¯\\_(ツ)_/¯**
-
-Note: `NaN`, empty, and missing are synonymous.
+> - Searched for and dealt with null values
+  - Searched for any discrepancies with data types and dealt with them
 
 ## Step 3: Feature extraction
-1.  There are two columns that pertain to how many family members are on the boat for a given person. Create a new column called `FamilyCount` which will be the sum of those two columns.
-2. Reverends have a special title in their name. Create a column called `IsReverend`: 1 if they're a preacher, 0 if they're not.
-3. In order to feed our training data into a classification algorithm, we need to convert our categories into 1's and 0's using `pd.get_dummies`
-  - Create 3 columns: `Embarked_C`, `Embarked_Q` and `Embarked_S`. These columns will have 1's and 0's that correspond to the `C`, `Q` and `S` values in the `Embarked` column
-  - Do the same thing for `Sex`
-  - BONUS: Extract the title from everyone's name and create dummy columns
+1.  There are two columns that pertain to how many family members are on the boat for a given person. Created a new column called `FamilyCount` which is the sum of those two columns.
+3. In order to feed the training data into a classification algorithm, I needed to convert the categories into 1's and 0's using `pd.get_dummies`
+  - Created 3 columns: `Embarked_C`, `Embarked_Q` and `Embarked_S`. These columns have 1's and 0's that correspond to the `C`, `Q` and `S` values in the `Embarked` column
+  - Did the same thing for `Sex`
 
 ## Step 4: Exploratory analysis
-1. What was the survival rate overall?
-2. Which gender fared the worst? What was their survival rate?
-3. What was the survival rate for each `Pclass`?
-4. Did any reverends survive? How many?
-5. What is the survival rate for cabins marked **¯\\_(ツ)_/¯**
-6. What is the survival rate for people whose `Age` is empty?
-7. What is the survival rate for each port of embarkation?
-8. What is the survival rate for children (under 12) in each `Pclass`?
-9. Did the captain of the ship survive? Is he on the list?
-10. Of all the people that died, who had the most expensive ticket? How much did it cost?
-11. Does having family on the boat help or hurt your chances of survival?
+- Asking all of the important questions to see what factors influenced survival rates on the Titanic.
+- **Most importantly**, would **_I_** have survived?! (Spoiler alert: not even close).
 
-## Step 5: Plotting
-Using Matplotlib and Seaborn, create several charts showing the survival rates of different groups of people. It's fine if a handful of charts are basic (Gender, Age, etc), but what we're really looking for is something beneath the surface.
+## Step 5: Visualizing findings
+Using Matplotlib and Seaborn, I created several charts showing the survival rates of different groups of people. A handful of the charts are basic (Gender, Age, etc), but I really tried looking for something beneath the surface.
 
 ## Project Feedback + Evaluation
 
-Projects will be evaluated across several categories.  For each category, students will receive a score on a scale of 0-3.
-
-Score | Expectations
------ | ------------
-**0** | _Does not meet expectations. Try again._
-**1** | _Approaching expectations. Getting there..._
-**2** | _Meets expectations. Great job._
-**3** | _Surpasses expectations. Brilliant!_
-
-For project 1 the evaluation categories are as follows:
+For this project, I wanted to make sure I was adhering to the following principles throughout:
 
 - **Organization**:	Clearly commented, annotated and sectioned Jupyter notebook.  Comments and annotations add clarity, explanation and intent to the work.  Notebook is well-structured with title, author and sections. Assumptions are stated and justified.
-- **Data Structures**:	Python data structures including lists, dictionaries and imported structures (e.g. DataFrames), are created and used correctly.  The appropriate data structures are used in context.  Data structures are created and accessed using appropriate mechanisms such as comprehensions, slices, filters and copies.
-- **Python Syntax and Control Flow**:	Python code is written correctly and follows standard style guidelines and best practices.  There are no runtime errors.  The code is expressive while being reasonably concise.
-- **Charting**: 	Charts (from Pandas, Matplotlib, and Seaborn) are created and used correctly. The appropriate charts are used in context. Charts are created and accessed using appropriate mechanisms.
+- **Data Structures**: Python data structures including lists, dictionaries and imported structures (e.g. DataFrames), are created and used correctly. The appropriate data structures are used in context. Data structures are created and accessed using appropriate mechanisms such as comprehensions, slices, filters and copies.
+- **Python Syntax and Control Flow**:	Python code is written correctly and follows standard style guidelines and best practices. There are no runtime errors. The code is expressive while being reasonably concise.
+- **Charting**: Charts (from Pandas, Matplotlib, and Seaborn) are created and used correctly. The appropriate charts are used in context. Charts are created and accessed using appropriate mechanisms.
